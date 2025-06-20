@@ -4,8 +4,25 @@
       <v-card-title class="justify-center">Sign In Page</v-card-title>
 
       <v-card-text>
-        <v-text-field label="Email" v-model="email" type="email" outlined dense></v-text-field>
-        <v-text-field label="Password" v-model="password" type="password" outlined dense></v-text-field>
+        <v-text-field
+          label="Email"
+          v-model="email"
+          type="email"
+          prepend-icon="mdi-email"
+          outlined
+          dense
+        ></v-text-field>
+
+        <v-text-field
+          label="Password"
+          v-model="password"
+          :type="showPassword ? 'text' : 'password'"
+          prepend-icon="mdi-lock"
+          :append-icon="showPassword ? 'mdi-eye-off' : 'mdi-eye'"
+          @click:append="showPassword = !showPassword"
+          outlined
+          dense
+        ></v-text-field>
       </v-card-text>
 
       <v-card-actions class="justify-center">
@@ -21,12 +38,12 @@ export default {
   data() {
     return {
       email: '',
-      password: ''
+      password: '',
+      showPassword: false
     }
   },
   methods: {
     signIn() {
-    
       console.log('Signing in with', this.email, this.password)
     }
   }
