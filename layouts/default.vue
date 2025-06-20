@@ -111,8 +111,8 @@ export default {
         },
          {
           icon: 'mdi-chart-bubble',
-          title: 'scanner',
-          to: '/scanner'
+          title: 'signin',
+          to: '/signin'
         }
       ]
     }
